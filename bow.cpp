@@ -3,15 +3,20 @@ using namespace std;
 
 int main() 
 {
-   int dd,mm,yy,cc,mo,ce,jave;
-   cout<<"Vendos Daten"<<endl;
+   int dd,mm,yy,cc,mo,ce,jave,viti;
+  cout<<"Vendos Daten"<<endl;
    cin>>dd;
    if (dd>31) cout<<"Kjo date nuk ekziston";
    else cout<<"Vendos nr. e muajit"<<endl;
    cin>>mm;
    if (mm>12) cout<<"Ky muaj nuk ekziston";
-   else cout<<"Vendos vitin (me hapesire ne mes ..20 16..20 17..)"<<endl;
-   cin>>cc>>yy;
+   else 
+      
+       cout << "Vendos vitin (1000-9999)"<<endl;
+       cin>>viti;
+       cc = viti / 100;
+       yy = viti % 100;
+   
    if (mm==3) mo=3;
    if (mm==4) mo=6;
    if (mm==5) mo=1;
