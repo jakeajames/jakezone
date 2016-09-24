@@ -3,19 +3,19 @@ using namespace std;
 
 int main() 
 {
-   int dd,mm,yy,cc,mo,ce,jave,viti;
-  cout<<"Vendos Daten"<<endl;
+   int dd,mm,yy,cc,mo,ce,week,year;
+  cout<<"Input a Day (1-31)"<<endl;
    cin>>dd;
-   if (dd>31) cout<<"Kjo date nuk ekziston";
-   else cout<<"Vendos nr. e muajit"<<endl;
+   if (dd>31) cout<<"Invalid day";
+   else cout<<"Input Month"<<endl;
    cin>>mm;
-   if (mm>12) cout<<"Ky muaj nuk ekziston";
+   if (mm>12) cout<<"Invalid Month";
    else 
       
-       cout << "Vendos vitin (1000-9999)"<<endl;
-       cin>>viti;
-       cc = viti / 100;
-       yy = viti % 100;
+       cout << "Input Year(1000-9999)"<<endl;
+       cin>>year;
+       cc = year / 100;
+       yy = year % 100;
    
    if (mm==3) mo=3;
    if (mm==4) mo=6;
@@ -42,10 +42,10 @@ int main()
         else mo=3;
     }
     if (yy==00) {
-        if (ce==6) jave=(dd+mo+yy+yy/4+ce)%7; 
+        if (ce==6) week=(dd+mo+yy+yy/4+ce)%7; 
         else {
-           if (mo==6) jave=(dd+1+mo+yy+yy/4+ce)%7; 
-           if (mo==2) jave=(dd+1+mo+yy+yy/4+ce)%7;
+           if (mo==6) week=(dd+1+mo+yy+yy/4+ce)%7; 
+           if (mo==2) week=(dd+1+mo+yy+yy/4+ce)%7;
            if (mo !=6) {
                if (mo !=2) jave=(dd+mo+yy+yy/4+ce)%7;
            }
@@ -53,13 +53,16 @@ int main()
    }
    else jave=(dd+mo+yy+yy/4+ce)%7; 
       
-   if (jave==0) cout<<"E Diele";
-   if (jave==1) cout<<"E Hene";
-   if (jave==2) cout<<"E Marte";
-   if (jave==3) cout<<"E Merkure";
-   if (jave==4) cout<<"E Enjte";
-   if (jave==5) cout<<"E Premte";
-   if (jave==6) cout<<"E Shtune";
+   if (jave==0) cout<<"Sunday";
+   if (jave==1) cout<<"Monday";
+   if (jave==2) cout<<"Tuesday";
+   if (jave==3) cout<<"Wednesday";
+   if (jave==4) cout<<"Thursday";
+   if (jave==5) cout<<"Friday";
+   if (jave==6) cout<<"Saturday";
+int tt;
+cout<<"";
+cin>>ts;
 
   return 0;
 }
