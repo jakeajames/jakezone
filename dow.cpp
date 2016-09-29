@@ -47,22 +47,22 @@ int main()
            if (mo==6) week=(dd+1+mo+yy+yy/4+ce)%7; 
            if (mo==2) week=(dd+1+mo+yy+yy/4+ce)%7;
            if (mo !=6) {
-               if (mo !=2) jave=(dd+mo+yy+yy/4+ce)%7;
+               if (mo !=2) week=(dd+mo+yy+yy/4+ce)%7;
            }
           }
    }
-   else jave=(dd+mo+yy+yy/4+ce)%7; 
+   else week=(dd+mo+yy+yy/4+ce)%7; 
       
-   if (jave==0) cout<<"Sunday";
-   if (jave==1) cout<<"Monday";
-   if (jave==2) cout<<"Tuesday";
-   if (jave==3) cout<<"Wednesday";
-   if (jave==4) cout<<"Thursday";
-   if (jave==5) cout<<"Friday";
-   if (jave==6) cout<<"Saturday";
+   if (week==0) cout<<"Sunday";
+   if (week==1) cout<<"Monday";
+   if (week==2) cout<<"Tuesday";
+   if (week==3) cout<<"Wednesday";
+   if (week==4) cout<<"Thursday";
+   if (week==5) cout<<"Friday";
+   if (week==6) cout<<"Saturday";
 int tt;
 cout<<"";
-cin>>ts;
+cin>>tt;
 
   return 0;
 }
