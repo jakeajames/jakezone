@@ -60,9 +60,7 @@ int main()
    if (week==4) cout<<"Thursday";
    if (week==5) cout<<"Friday";
    if (week==6) cout<<"Saturday";
-int tt;
-cout<<"";
-cin>>tt;
+system("pause");
 
   return 0;
 }
