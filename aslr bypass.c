@@ -37,7 +37,7 @@ int aslr = addr - staticAddr;
 
 secretAddr = secretAddr + aslr;
 
-int p1, p2, p3, p4;
+int p1, p2, p3;
 
 p1 = secretAddr;
 p2 = secretAddr >> 8;
