@@ -79,7 +79,7 @@ foreach($packs as $pack)
             }
             elseif ($i % 2 != 0 && $countpck != 0)
             {
-                if (strpos($packsinfokv[$j + 1], " ") || preg_match('/[^A-Za-z]/', $packsinfokv[$j + 1]))
+                if (!ctype_alpha($packsinfokv[$j + 1]))
                 {
                     $i--;
                     echo $packsinfokv[$j] . ": ";
