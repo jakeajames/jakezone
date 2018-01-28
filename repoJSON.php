@@ -11,9 +11,9 @@ function curlIT($url, $file)
         "Accept: */*",
         "X-Machine: iPad5,3",
         "X-Firmware: 11.1.2",
-        "User-Agent: Telesphoreo APT-HTTP/1.0.592",
+        "User-Agent: Telesphoreo APT-HTTP/1.0.592", /*user agent*/
         "Accept-Language: en-us",
-        "X-Unique-ID: 1234567890123456789012345678901234567890",
+        "X-Unique-ID: 1234567890123456789012345678901234567890", /*dummy udid*/
         "Accept-Encoding: gzip, deflate"
     );
     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
@@ -24,13 +24,13 @@ function curlIT($url, $file)
 
 header("Content-Type: text/plain");
 $repoURL = $_GET["repo"];
-$packs = explode("\n\n", curlIT($repoURL, "Packages"));
-$infos = explode("\n", curlIT($repoURL, "Release"));
+$packs = explode("\n\n", curlIT($repoURL, "Packages")); //get the Packages file
+$infos = explode("\n", curlIT($repoURL, "Release")); //repo info
 echo "{\n";
 
 foreach($infos as $info)
 {
-    $keyvalue = explode(": ", $info);
+    $keyvalue = explode(": ", $info); //divide the info entries
     $i = 0;
     foreach($keyvalue as $kv)
     {
@@ -56,6 +56,8 @@ foreach($infos as $info)
 echo "    \"packages\":[\n";
 $count = count($packs);
 
+//too lazy to explain this, the code is a mess
+
 foreach($packs as $pack)
 {
     if (--$count <= 0)
@@ -79,10 +81,13 @@ foreach($packs as $pack)
             }
             elseif ($i % 2 != 0 && $countpck != 0)
             {
-                if (!ctype_alpha($packsinfokv[$j + 1]))
+               if (strpos($packsinfokv[$j+1], " ") || strpos($packsinfokv[$j+1], ":") || strpos($packsinfokv[$j+1], " ") || strpos($packsinfokv[$j+1], "+") || strpos($packsinfokv[$j+1], "=") || strpos($packsinfokv[$j+1], "'") || strpos($packsinfokv[$j+1], '"')){
+                //if the package description contains ": " then it will mess it up
+                //we need to fix that by checking if the next value contains any of these characters (and normally it shouldn't)
+                //ctype_alpha does not work
                 {
-                    $i--;
-                    echo $packsinfokv[$j] . ": ";
+                    $i--; //go back
+                    echo $packsinfokv[$j] . ": "; //fix
                 }
                 else
                 {
