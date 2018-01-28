@@ -81,7 +81,7 @@ foreach($packs as $pack)
             }
             elseif ($i % 2 != 0 && $countpck != 0)
             {
-               if (strpos($packsinfokv[$j+1], " ") || strpos($packsinfokv[$j+1], ":") || strpos($packsinfokv[$j+1], " ") || strpos($packsinfokv[$j+1], "+") || strpos($packsinfokv[$j+1], "=") || strpos($packsinfokv[$j+1], "'") || strpos($packsinfokv[$j+1], '"')){
+               if (strpos($packsinfokv[$j+1], " ") || strpos($packsinfokv[$j+1], ":") || strpos($packsinfokv[$j+1], "-") || strpos($packsinfokv[$j+1], "+") || strpos($packsinfokv[$j+1], "=") || strpos($packsinfokv[$j+1], "'") || strpos($packsinfokv[$j+1], '"')){
                 //if the package description contains ": " then it will mess it up
                 //we need to fix that by checking if the next value contains any of these characters (and normally it shouldn't)
                 //ctype_alpha does not work
