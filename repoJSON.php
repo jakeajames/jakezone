@@ -93,7 +93,7 @@ foreach($packs as $pack)
                 {
                     if ($packsinfokv[$j - 1] == "Filename")
                     {
-                        echo str_replace("//", "/", $repoURL . "/" . $packsinfokv[$j]) . "\",\n";
+                        echo $repoURL . "/" . $packsinfokv[$j] . "\",\n";
                     }
                     else
                     {
