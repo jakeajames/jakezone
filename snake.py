@@ -27,6 +27,7 @@ while True:
         display.clear()
         display.scroll(":( - Score: " + str(score))
         break
+        break
       #higher score, faster the snake    
       if(part[0] == food[0] and part[1] == food[1]):
         score += 10
