@@ -9,8 +9,9 @@ shalladdfood = True
 score = 0
 food = [random.randint(0, 4), random.randint(0, 4)]
 speed = 500
+didntlose = True
 
-while True:
+while didntlose:
   display.clear() 
   #add food
   display.set_pixel(food[0], food[1], 9)
@@ -26,7 +27,7 @@ while True:
       if [part[0], part[1]] in snake[::-1][1:]:
         display.clear()
         display.scroll(":( - Score: " + str(score))
-        break
+        didntlose = False
         break
       #higher score, faster the snake    
       if(part[0] == food[0] and part[1] == food[1]):
