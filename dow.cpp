@@ -1,3 +1,5 @@
+//first thing I've programmed, ever
+
 #include <iostream>
 using namespace std;
 
