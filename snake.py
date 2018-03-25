@@ -41,7 +41,6 @@ while True:
           newXY = [snake[0][0]+1, snake[0][1]]
         elif direction % 4 == 3: #up
           newXY = [snake[0][0], snake[0][1]+1]
-        else:
         shalladdfood = True
         snake = [newXY] + snake
     else:
